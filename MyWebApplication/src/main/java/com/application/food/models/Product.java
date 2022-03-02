@@ -1,31 +1,31 @@
-package com.food.entities;
+package com.application.food.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 @Entity
-@Table(name = "products")
+@Table(name = "Products")
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Product {
 	@Id
 	@GeneratedValue
-	private String id;
+	private int id;
 	private String name;
 	private String category;
 
-	public Product(String id, String name, String category) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.category = category;
-	}
-
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -44,5 +44,5 @@ public class Product {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
+
 }
