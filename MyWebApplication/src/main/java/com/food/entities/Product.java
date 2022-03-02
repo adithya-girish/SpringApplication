@@ -1,13 +1,20 @@
 package com.food.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Food {
-
+@Entity
+@Table(name = "products")
+public class Product {
+	@Id
+	@GeneratedValue
 	private String id;
 	private String name;
 	private String category;
 
-	public Food(String id, String name, String category) {
+	public Product(String id, String name, String category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -37,5 +44,5 @@ public class Food {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-
+	
 }
